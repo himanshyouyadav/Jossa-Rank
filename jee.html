@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank Predictor</title>
+</head>
+<style>
+    iframe {
+        overflow: hidden
+    }
+    
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body
+    {
+        margin:0px
+    }
+    
+    .container {
+        /* To position the loading */
+        position: relative;
+    }
+
+    .loading {
+        /* Absolute position */
+        left: 0;
+        position: absolute;
+        top: 0;
+
+        /* Take full size */
+        height: 100%;
+        width: 100%;
+
+        /* Center */
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+</style>
+
+<body>
+  <div class="container">
+    <!-- The loading indicator -->
+    <div class="loading" id="loading">Loading</div>
+
+    <!-- The iframe -->
+    <iframe class="iframe" id="iframe"  style="opacity: 0" src="https://script.google.com/macros/s/AKfycbze8CW_3IHnOJOgSI2T0XkZf3M1uWdRvXtU6Wgpxeh1atTkLpa8ugANuWjhE39K3ri0iQ/exec">
+    </iframe>
+ </div>
+</body>
+</html>
+
+<script>
+    // Query the elements
+    const iframeEle = document.getElementById('iframe');
+    const loadingEle = document.getElementById('loading');
+
+    iframeEle.addEventListener('load', function () {
+        // Hide the loading indicator
+        loadingEle.style.display = 'none';
+
+        // Bring the iframe back
+        iframeEle.style.opacity = 1;
+    });
+</script>
+
+
+
+
